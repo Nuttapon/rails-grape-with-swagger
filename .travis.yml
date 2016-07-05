@@ -1,3 +1,10 @@
 language: ruby
+
 rvm:
   - 2.3.1
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database rails_grape_with_swagger_test;' -U postgres
